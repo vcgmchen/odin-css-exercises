@@ -1,0 +1,91 @@
+
+/* DESIRED OUTCOMES */
+
+/* Descendent relationship, expressed with element or class*/
+/* div p {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* This is the most precise according to the requirements */
+.container .text {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+}
+
+/* div .text {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* .container p {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* Parent relationship, expressed with element or class */
+/* div>p {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* .container>.text {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* div>.text {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* .container>p {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+
+
+/* UNDESIRED OUTCOMES */
+
+/* Parent div: styling includes whitespace between p elements */
+/* div {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* Grouping: styles all */
+/* div,
+p {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+/* Styles p's after div at the same level */
+/* div~p {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
