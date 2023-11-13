@@ -1,0 +1,14 @@
+/* For grouping class rules: seperate class names by comma */
+.dark, .color {
+    font-size: 28px;
+    font-family: 'Helvetica', 'Times New Roman', 'sans-serif';
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.color {
+    background-color: yellow;
+}
