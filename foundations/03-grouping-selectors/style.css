@@ -1,7 +1,8 @@
-/* For grouping class rules: seperate class names by comma */
-.dark, .color {
-    font-size: 28px;
+/* For grouping selector rules: seperate selector names by comma, and list each selector on a seperate ine */
+.dark, 
+.color {
     font-family: 'Helvetica', 'Times New Roman', 'sans-serif';
+    font-size: 28px;
 }
 
 .dark {
