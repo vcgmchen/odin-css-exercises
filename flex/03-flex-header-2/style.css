@@ -46,3 +46,61 @@ a {
 ul {
   list-style-type: none;
 }
+
+/*-----------------------------------------------------------------------
+My solution
+-----------------------------------------------------------------------*/
+
+/* Nested level 1 */
+.header {
+  /* Layout items horizontally */
+  display: flex;
+                  /* Vertically align */
+                  /* align-items: center; */
+  /* Ensure 8px padding between content and edge of header */
+  padding: 8px;
+  /* column-gap: 16px; */
+  justify-content: space-between;
+}
+
+/* Nested level 2 */
+/* Contains logo & navigation list links */
+.container-lhs {
+  /* background-color: powderblue; */
+  /* Layout items horizontally */
+  display: flex;
+  /* put 16px space between the flex children i.e. logo & ul */
+  gap: 16px;
+}
+
+/* Nested level 2 */
+/* Contains buttons */
+.container-rhs {
+  /* background-color: pink; */
+  /* Layout items horizontally */
+  display: flex;
+  /* put 16px space between the flex children i.e. button & icon*/
+  gap: 16px;
+  /* Vertically centers AND prevents notif button from vertically stretching to fill parent height */
+  align-items: center;
+}
+
+/* Nested level 3 */
+/* Link items  */
+ul {
+  /* Layout items horizontally */
+  display:flex;
+  /* Set 16px gap between list items */
+  gap: 16px;
+  /* List items have nonzero left padding by default (it's the space between li and li marker), so set to 0 to remove */
+  padding-left: 0;
+  background-color: aqua;
+}
+
+/*----------------------------------------------------------------------- 
+Notes from solution: 
+- for ul, they set general padding to 0 (same result though)
+- for ul, they set margin to 0. thus need to add align-items: center to .container-lhs
+- (elegance) can condense container-lhs & container-rhs into a single rule, since they both have the same rules 
+- can rename to 'left' and 'right' (more condensed naming) 
+-----------------------------------------------------------------------*/
