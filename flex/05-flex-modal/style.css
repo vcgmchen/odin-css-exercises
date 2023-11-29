@@ -67,3 +67,31 @@ button.cancel {
   border: 1px solid #ddd;
   color: royalblue;
 }
+
+/*--------------------------------------------------------------------------------
+My solution
+--------------------------------------------------------------------------------*/
+
+/* seperate into left & right; padding & gutter */
+.modal {
+  /* Seperate icon from rest of content */
+  display: flex;
+  /* Padding on modal */
+  padding: 15px;
+  /* Same amount of space between icon & content  */
+  gap: 15px;
+}
+
+/* header alignment (inclusion of close button), font styling */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+/* Add space between header and text */
+.text {
+  margin: 10px 0px;
+}
