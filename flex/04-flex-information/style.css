@@ -24,3 +24,112 @@ img {
   justify-content: center;
   background: #eee;
 }
+
+/*----------------------------------------------------------------------
+Criteria
+- All items are centered on the page (horizontally, not vertically).
+- The title is centered on the page.
+- There is 32px between the title and the 'items.'
+- There is 52px between each item.
+- The items are arranged horizontally on the page.
+- The items are only 200px wide and the text wraps.
+- The item text is centered.
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+My solution
+----------------------------------------------------------------------*/
+
+body {
+  /* 2 children: .title div & .info container div */
+  display: flex;
+  flex-direction: column;
+  /* center on the cross-axis */
+  align-items: center;
+  /* puts 32px space between header and items without adding 32px space above header, like {margin: 32px;} would */
+  gap: 32px;
+  /* equivalent: .title{margin-bottom: 32px;} */
+}
+
+.info {
+  /* 4 children: each .card container */
+  display: flex;
+  gap: 52px;
+}
+
+.card {
+  display: flex;
+  /* image is followed vertically by text */
+  flex-direction: column;
+  /* centers images within card container */
+  align-items: center;
+  /* note: align-items centers the block element but not the text within the block itself  */
+  /* centers text */
+  text-align: center;
+  width: 200px
+}
+
+/*----------------------------------------------------------------------
+Notes from the solution
+- Comparison: 
+  Solution used 2 nest-levels of flexbox, 4 selectors, 6 properties; 
+  I used 3 nest-levels of flexbox, 3 selectors, 11 properties   
+- Naming: 
+  They used .container and .info for the class names 
+  I used .info and .card
+- Centering heading: 
+  They used body{text-align: center}
+  I used body{display: flex; flex-direction: column; justify-content: center}
+- 32px space bw heading and info: 
+  They used .title{margin-bottom: 32px;}
+  I used body{display: flex; gap: 32px;} 
+- Centering info: 
+  They used inherited body{text-align: center}
+  WHY THAT WORKS: so long as img is INSIDE a block element (e.g. div), 
+  applying text align to the BLOCK will center the img INSIDE the block 
+- Info max 200px wide & text wrapping:
+  I used {width: 200px} but didn't get wrapping 
+  They used max-width 
+- Horizontal arrangement of all content on page: 
+  I applied flexbox at 3 levels to keep centering (since flex properties aren't inherited)
+  They used {text-align: center} on body & only needed to use flex on 1 container 
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+Code I ended up not using
+
+CSS: Trying to align text & images with text-align (i.e. without using flexbox):
+  .info .text, .info img {text-align: center;} 
+by itself centers the text. 
+since text align only works on block-level elements, we have to set 
+  display: block 
+for <img> elements. 
+this didn't seem much more elegant than using flexbox. 
+.info .text, 
+.info img {
+  text-align: center;
+}
+Actually, furthermore, it still relies on a container (.card) 
+for each image & text pair. So might as well set flex properties on .card
+
+CSS: Trying to set card widths to 200px:
+  .card {flex: 0 0 200px;}
+Explanation: this undid the horizontal centering of the .info container. 
+I found that {width: 200px} fulfilled the requirement without compromising alignment.
+
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+Miscellaneous Notes
+
+How to Center Images: 
+
+A. Horizontal centering 
+A.1. CSS text-align property
+  img {display: block; text-align: center}
+A.2. CSS margins 
+  img {display: block; width: __%; margin: auto;}
+A.3. CSS flex
+  .img-container {display: flex; justify-content: center}
+
+B. Vertical centering 
+B.1. CSS position property (absolute/relative positioning) 
+B.2. Flex
+----------------------------------------------------------------------*/
